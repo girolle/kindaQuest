@@ -42,9 +42,9 @@ function quizBoxInit(id){
 function resultBoxInit(id, a) {
 	box =  $("#r" + id);
 	rand = parseInt(Math.random() * 2);
-	box.append($('<h2>', {id:('num_'+ id)}));
+	box.append($('<h2>', {id:('num_'+ id+"_0")}));
 	if (id) {
-		$('#num_'+ id)[0].innerText = id + "/7";
+		$('#num_'+ id + "_0")[0].innerText = id + "/7";
 		box.append($('<div>', {class: ('indicators'), id : ("i_" + id + "_0")}));
 		$("#i_"+id+ "_0")[0].style.marginBottom = 0;
 		$("#i_"+id+ "_0").append($('<div>', {class: "ind", id: "money_" + id+ "_0"}));
