@@ -83,7 +83,8 @@ function resultBoxInit(id, a) {
 	}
 
 	box.append($('<div>', {class: "next-button", id: ("next_"+id)}));
-	$("#next_"+id)[0].innerText = "ДАЛЬШЕ";
+	if (id)	$("#next_"+id)[0].innerText = "ДАЛЬШЕ";
+	else $("#next_"+id)[0].innerText = "НАЧАТЬ";
 	mouseOnElement($("#next_"+id));
 	$("#next_"+id).click (()=>{
 		box[0].style.display = "none";
