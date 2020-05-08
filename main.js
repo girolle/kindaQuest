@@ -147,16 +147,23 @@ function exit(){
 		$("#i_"+id+ "_0").append($('<div>', {class: "ind", id: "mood_" + id+ "_0"}));
 		$('#money_'+id+ "_0")[0].innerHTML='Деньги: ' + money;
 		$('#mood_'+id+ "_0")[0].innerHTML='Настроение: ' + mood;
-	box.append($('<img>',{id:('img_final'),src:('images/finished.png'), class:"quiz-img res-img"}));
-	box.append($('<div>', {id:'f-text', class: "ans-box"}));
-	$('#f-text')[0].style.fontSize = (parseInt(h1Size)/1.2) + "px";
+
 	if (money <=-100 || mood <=-100){
-	$('#f-text')[0].innerHTML = "Хммммм, возможно, что-то пошло не так… <p></p><a href = https://girolle.github.io/kindaQuest/> Попробуйте еще раз:) </a>";
+		box.append($('<img>',{id:('img_final'),src:('images/finish_bad.jpg'), class:"quiz-img res-img"}));
+		box.append($('<div>', {id:'f-text', class: "ans-box"}));
+		$('#f-text')[0].style.fontSize = (parseInt(h1Size)/1.2) + "px";
+		$('#f-text')[0].innerHTML = "Хммммм, возможно, что-то пошло не так… <p></p><a href = https://girolle.github.io/kindaQuest/> Попробуйте еще раз:) </a>";
 	}
-	else if  (money >=100 && mood <=100){
+	else if  (money >=150 && mood >=150){
+		box.append($('<img>',{id:('img_final'),src:('images/finish_good.jpg'), class:"quiz-img res-img"}));
+		box.append($('<div>', {id:'f-text', class: "ans-box"}));
+		$('#f-text')[0].style.fontSize = (parseInt(h1Size)/1.2) + "px";
 		$('#f-text')[0].innerHTML = "Поздравляем! Вы супер-молодец!";
 	}
 	else { 
+		box.append($('<img>',{id:('img_final'),src:('images/finish_ok.jpg'), class:"quiz-img res-img"}));
+		box.append($('<div>', {id:'f-text', class: "ans-box"}));
+		$('#f-text')[0].style.fontSize = (parseInt(h1Size)/1.2) + "px";
 		$('#f-text')[0].innerHTML = "Поздравляем! Хороший результат, но можно лучше";
 	}
 	box[0].style.display = "inline-block";
